@@ -11,18 +11,18 @@ function Footer() {
             <div className="footer-center">
               <h2>Zenelly</h2>
               <div>
-                <a target="_blank " href="https://github.com/ant-design/ant-design">
+                <a target="_blank " href="/index">
                   Inicio
                 </a>
               </div>
               <div>
-                <a href="http://pro.ant.design">Quienes somos</a>
+                <a href="">Quienes somos</a>
               </div>
               <div>
-                <a href="http://mobile.ant.design">Políticas</a>
+                <a href="">Políticas</a>
               </div>
               <div>
-                <a href="http://ng.ant.design">Términos y condiciones</a>
+                <a href="">Términos y condiciones</a>
               </div>
               
             </div>
@@ -31,16 +31,16 @@ function Footer() {
             <div className="footer-center">
               <h2>Aprende</h2>
               <div>
-                <a href="http://scaffold.ant.design">¿Qué es el Bitcoin?</a>                
+                <a href="">¿Qué es el Bitcoin?</a>                
               </div>
               <div>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/dvajs/dva">Ayuda y soporte</a> 
+                <a target="_blank" rel="noopener noreferrer" href="">Ayuda y soporte</a> 
               </div>
               <div>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/dvajs/dva-cli">Trabaja con nosotros</a>
+                <a target="_blank" rel="noopener noreferrer" href="">Trabaja con nosotros</a>
               </div>
               <div>
-                <a target="_blank" rel="noopener noreferrer" href="http://motion.ant.design">Quejas y reclamos</a>                
+                <a target="_blank" rel="noopener noreferrer" href="">Quejas y reclamos</a>                
               </div>
               
             </div>
@@ -54,17 +54,17 @@ function Footer() {
                 </a>
               </div>
               <div>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/wiki/FAQ">
+                <a target="_blank" rel="noopener noreferrer" href="">
                   Facebook
                 </a>
               </div>
               <div>
-                <a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design">
+                <a target="_blank" rel="noopener noreferrer" href="">
                   Twitter
                 </a>
               </div>
               <div>
-                <a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design-english">
+                <a target="_blank" rel="noopener noreferrer" href="">
                   WhatsApp
                 </a>
               </div>

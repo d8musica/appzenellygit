@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TweenOne from 'rc-tween-one';
 import ScrollOverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { Icon, Button } from 'antd';
+
 import QueueAnim from 'rc-queue-anim';
 
 export default function Page1({ isMobile }) {
@@ -22,13 +22,7 @@ export default function Page1({ isMobile }) {
       >
         <h2 key="h2">Compra y vende tus Bitcoin <br></br> en Colombia</h2>
         <p key="p" style={{ maxWidth: 310 }}> Una nueva plataforma que hará que la compra de tus cryptos sea más fácil que nunca</p>
-        <div key="button">
-          <a>
-            <Button type="primary" size="large">
-              Regístrate
-            </Button>
-          </a>
-        </div>
+        
       </QueueAnim>
     </ScrollOverPack>
   );

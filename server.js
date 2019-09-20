@@ -7,7 +7,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-const url = 'mongodb+srv://admin:<password>@cluster0-9doht.mongodb.net/test?retryWrites=true&w=majority'
+const url = 'mongodb+srv://admin:<admin>@cluster0-9doht.mongodb.net/test?retryWrites=true&w=majority'
 
 mongoose.connect(url, { useNewUrlParser: true })
 .then(() => {

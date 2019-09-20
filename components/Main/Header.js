@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Menu, Row, Col, Icon, Button, Popover, Badge } from 'antd';
+import Logo from './images/logo_blanco.png';
 
 
 const searchEngine = 'Google';
@@ -51,15 +52,15 @@ export default class Header extends React.Component {
         Iniciar Sesion
       </Button>,
       <Menu mode={menuMode} defaultSelectedKeys={['home']} id="nav" key="nav">
-        <Menu.Item key="home">
+        <Menu.Item key="home" href="/index.js">
           Inicio
         </Menu.Item>
         
-        <Menu.Item key="docs/FAQ">
+        <Menu.Item key="docs/FAQ" href="/login.js">
           FAQ
         </Menu.Item>
         
-        <Menu.Item key="docs/contact">
+        <Menu.Item key="docs/contact" href="/login.js">
           Contáctanos
         </Menu.Item>        
         
@@ -87,10 +88,13 @@ export default class Header extends React.Component {
         ) : null}
         <Row>
           <Col lg={4} md={5} sm={24} xs={24}>
+
+          
+
             <a id="logo">
-              
-              <span>Zenelly</span>
+              <img alt="logo" src={Logo} width="100%"/>
             </a>
+            
           </Col>
           <Col lg={20} md={19} sm={10} xs={10}>
             {menuMode === 'horizontal' ? menu : null}
