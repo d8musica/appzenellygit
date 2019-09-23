@@ -6,24 +6,12 @@ import 'antd/dist/antd.css';
 import Head from '../components/head'
 import Login from '../components/Login'
 
-
-
-
-
-
-
 const Login1 = () => (
   <div>
     <Head title="Log In" />
     <Login/>
     
-
-    
-
     <style jsx>{`
-
-      @import 'antd/dist/antd.css';
-
       .hero {
         width: 100%;
         color: #333;

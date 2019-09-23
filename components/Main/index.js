@@ -4,8 +4,6 @@ import { enquireScreen } from 'enquire-js';
 import Header from './Header1';
 import Banner from './Banner1';
 import Page1 from './Page1';
-
-
 import Footer from './Footer';
 import './static/style';
 

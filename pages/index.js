@@ -1,29 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
-import 'antd/dist/antd.css';
 
 
 import Head from '../components/head'
 import Main from '../components/Main'
 
-
-
-
-
-
-
 const Home = () => (
   <div>
     <Head title="Home" />
     <Main/>
-    
-
-    
-
+  
     <style jsx>{`
-
-      @import 'antd/dist/antd.css';
-
       .hero {
         width: 100%;
         color: #333;
