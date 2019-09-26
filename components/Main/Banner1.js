@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ScrollElement from 'rc-scroll-anim/lib/ScrollElement';
 import { Icon } from 'antd';
 import QueueAnim from 'rc-queue-anim';
-import contact from './images/contact.png'
+import contact from '../../static/images/contact.png'
 
 function typeFunc(a) {
   if (a.key === 'line') {

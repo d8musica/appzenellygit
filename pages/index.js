@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
+import 'antd/dist/antd.css';
 
 import Head from '../components/head'
 import Main from '../components/Main'
