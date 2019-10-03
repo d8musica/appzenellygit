@@ -7,7 +7,7 @@ function Footer() {
     <footer id="footer" className="dark">
       <div className="footer-wrap">
         <Row>
-          <Col lg={6} sm={8} xs={8}>
+          <Col lg={8} sm={24} xs={24}>
             <div className="footer-center">
               <h2>Zenelly</h2>
               <div>
@@ -27,7 +27,7 @@ function Footer() {
               
             </div>
           </Col>
-          <Col lg={8} sm={8} xs={8}>
+          <Col lg={8} sm={24} xs={24}>
             <div className="footer-center">
               <h2>Aprende</h2>
               <div>
@@ -45,7 +45,7 @@ function Footer() {
               
             </div>
           </Col>
-          <Col lg={8} sm={8} xs={8}>
+          <Col lg={8} sm={24} xs={24}>
             <div className="footer-center">
               <h2>Social</h2>
               <div>

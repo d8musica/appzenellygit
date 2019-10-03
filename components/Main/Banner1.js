@@ -23,16 +23,19 @@ export default function Banner({ onEnterChange }) {
         onChange={({ mode }) => onEnterChange(mode)}
         playScale={0.9}
       >
-        <QueueAnim className="banner-text-wrapper" type={typeFunc} delay={400} key="banner">
-          <h2 key="h2">Hola, nuestro sitio está en construcción</h2>
-          <p key="content">Si necesitas información sobre Zenelly puedes escribirnos para atender tus inquietudes </p>
-          <br></br>
-          <br></br>
-          <a id="logo">
-            <img alt="logo" src={contact} width="100%"/>
-          </a>
-          
-        </QueueAnim>
+        <div className="banner">
+          <QueueAnim className="banner-text-wrapper" type={typeFunc} delay={400} key="banner">
+            
+            <h2 key="h2">Hola, nuestro sitio está en construcción</h2>
+            <p key="content">Si necesitas información sobre Zenelly puedes escribirnos para atender tus inquietudes </p>
+            <br></br>
+            <br></br>
+            <a id="banner">
+              <img alt="logo" src={contact} width="100%"/>
+            </a>
+            
+          </QueueAnim>
+        </div>
         <Icon type="down" className="down" />
       </ScrollElement>
     </section>

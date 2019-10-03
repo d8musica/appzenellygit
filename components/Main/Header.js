@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Menu, Row, Col, Icon, Button, Popover, Badge } from 'antd';
-import Logo from './images/logo_blanco.png';
+import Logo from '../../static/images/logo_blanco.png';
 
 
 const searchEngine = 'Google';
