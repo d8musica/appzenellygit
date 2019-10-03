@@ -29,6 +29,21 @@ function Banner({onEnterChange,btc_initial_value}) {
   const [btc_value,update_btc_value] = useState(btc_initial_value.btc_initial_value)
 
   
+  const [usd_cop,setUsd_cop] = useState(0)
+
+  const new_USD = axios('https://www.datos.gov.co/resource/32sa-8pi3.json?vigenciadesde=2019-10-3T00:00:00.000')
+        .then(function (new_USD) {                  
+          setUsd_cop(new_USD.data[0].valor)
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+  
+  
+
+  
+  
 
   useEffect(() => {
 
@@ -48,8 +63,19 @@ function Banner({onEnterChange,btc_initial_value}) {
         console.log(btc_value)        
 
       }
-      setInterval(Update ,60000) 
+
+      
+
+
+
+      setInterval(Update ,60000)
+      
+      
+      
+
   }, []);
+
+  var u = btc_value*usd_cop*0.9
 
   
 
@@ -84,7 +110,7 @@ function Banner({onEnterChange,btc_initial_value}) {
 
       <Col lg={12} sm={24} xs={24}>
         <section>
-          {btc_value}
+          BTC/USD: {btc_value}<br></br>USD/COP: {usd_cop}<br></br>BTC/COP: {u}
         </section>
       </Col>
 
