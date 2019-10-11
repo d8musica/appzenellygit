@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import HttpsRedirect from 'react-https-redirect';
 
 import Main from '../components/Main'
 import Head from '../components/head'
@@ -13,9 +14,12 @@ function Index (props) {
 
     [
     
-      <Head key = "Head"/>,
 
-      <Main key = "Main" btc_initial_value = {props.btc_initial}/>
+      <HttpsRedirect>
+        <Head key = "Head"/>,
+  
+        <Main key = "Main" btc_initial_value = {props.btc_initial}/>
+      </HttpsRedirect>
 
       
     

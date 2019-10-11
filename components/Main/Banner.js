@@ -157,7 +157,7 @@ function Banner({onEnterChange,btc_initial_value}) {
               </TabPane>            
             </Tabs>
 
-            {usd_cop}
+            {console.log(usd_cop)}
             
           </div>
         </div>

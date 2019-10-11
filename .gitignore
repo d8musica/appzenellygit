@@ -1,2 +1,7 @@
 node_modules
 .next/
+generated-csr.txt
+generated-private-key.txt
+73bbdc971705f037.crt
+gd_bundle-g2-g1.crt
+

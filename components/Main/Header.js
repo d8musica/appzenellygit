@@ -48,9 +48,7 @@ export default class Header extends React.Component {
     });
 
     const menu = [
-      <Button className="header-lang-button" ghost size="small" key="lang" href="/login">
-        Iniciar Sesion
-      </Button>,
+      
       <Menu mode={menuMode} defaultSelectedKeys={['home']} id="nav" key="nav">
         <Menu.Item key="home" href="/index.js">
           Inicio
@@ -62,9 +60,15 @@ export default class Header extends React.Component {
         
         <Menu.Item key="docs/contact" href="/login.js">
           Contáctanos
-        </Menu.Item>        
+        </Menu.Item>
+
+        <Menu.Item>
+          <Button className="header-lang-button" ghost size="small" key="lang" href="/login">
+            Iniciar Sesion
+          </Button>    
+        </Menu.Item>    
         
-      </Menu>,
+      </Menu>
     ];
 
     return (
