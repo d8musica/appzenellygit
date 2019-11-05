@@ -5,9 +5,32 @@ import { Row,Col,Tabs,InputNumber } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import axios from 'axios'
 import moment from 'moment/moment.js'
+import { reject } from 'any-promise';
 
 
 const { TabPane } = Tabs;
+
+
+
+async function Initial_BTC () {
+
+  const new_value = await axios('https://www.bitstamp.net/api/v2/ticker/btcusd/')
+        .then(function (new_value) {          
+
+          
+          return new_value.data.bid     
+          
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+
+  return new_value
+
+}
+
+
 
 
 
@@ -48,45 +71,43 @@ function typeFunc(a) {
   return 'left';
 }
 
-function Banner({onEnterChange,btc_initial_value}) {
+function Banner({onEnterChange,initial_values}) {
+
+  var usdcop = initial_values.usdcop
+  var btcusd = initial_values.btcusd
+
+  
 
   
   
   
-  var date = moment().format();
-  date = date.slice(0,10)
-  var url = 'https://www.datos.gov.co/resource/32sa-8pi3.json?vigenciadesde=' 
-  var url = url + date + 'T00:00:00.000'
-
-  const [btc_value,update_btc_value] = useState(btc_initial_value.btc_initial_value)
-  const [usd_cop,setUsd_cop] = useState(0) 
+  
+  
+  
+  const [btc_value,update_btc_value] = useState(btcusd)
+  const [usd_cop,setUsd_cop] = useState(usdcop) 
   const [inputBuyBTC,setBuyBTC]=useState(1)
   const [inputSellBTC,setSellBTC]=useState(1)
   
   
-  var lastTRM = 3300
+  
+  var buyprice=btc_value*usdcop
+  var sellprice=btc_value*usdcop  
   
 
-  var buyprice = btc_value*usd_cop*0.9 
-  var sellprice = btc_value*usd_cop 
+  
+  
+  
+  
+  
 
-  const new_USD = axios(url)
-        .then(function (new_USD) {
-          
-          if((new_USD.length > 0) == true){
-            console.log('entro')
-            setUsd_cop(new_USD.data[0].valor)
-            lastTRM = (new_USD.data[0].valor)
-          }else{
-            setUsd_cop(lastTRM)
-          }
+  
 
-          
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
+
+
+  
+
+  
 
   useEffect(() => {
 
@@ -95,7 +116,9 @@ function Banner({onEnterChange,btc_initial_value}) {
         const new_value = await axios('https://www.bitstamp.net/api/v2/ticker/btcusd/')
         .then(function (new_value) {
 
-          update_btc_value(new_value.data.bid)          
+          update_btc_value(new_value.data.bid)
+          buyprice=btc_value*usdcop*0.91
+          sellprice=btc_value*usdcop          
           
         })
         .catch(function (error) {
@@ -131,7 +154,7 @@ function Banner({onEnterChange,btc_initial_value}) {
               <p key="content">Zenelly llega para brindar<br></br> seguridad, respaldo y confianza <br></br> para que puedas comprar y vender <br></br>tus bitcoins de forma ágil y eficiente.</p>
               <span className=" line" key="line" />
               <div key="button1" className="start-button clearfix">
-                <a>
+                <a href="/signup">
                   COMIENZA AHORA
                 </a>
               </div>
@@ -149,15 +172,15 @@ function Banner({onEnterChange,btc_initial_value}) {
             <Tabs className="tabs-inner" defaultActiveKey="1" size ="large">
               <TabPane tab="Compra" key="1">
                 <h2>Ingresa la cantidad de BTC que deseas comprar</h2><InputNumber min={0} max={10} defaultValue={1} step={0.001} onChange={onChangeBuyBTC,setBuyBTC} /><br></br>
-                <h2>Valor en COP:</h2> {Math.round(buyprice*inputBuyBTC)}
+                <h2>Valor en COP:</h2> {Math.round((buyprice*inputBuyBTC)).toLocaleString()}
               </TabPane>
               <TabPane tab="Vende" key="2">
                 <h2>Ingresa la cantidad de BTC que deseas vender</h2><InputNumber min={0} max={10} defaultValue={1} onChange={onChangeSellBTC,setSellBTC} />
-                <h2>Valor en COP:</h2> {Math.round(sellprice*inputSellBTC)}              
+                <h2>Valor en COP:</h2> {Math.round((sellprice*inputSellBTC)).toLocaleString()}              
               </TabPane>            
             </Tabs>
 
-            {console.log(usd_cop)}
+            
             
           </div>
         </div>

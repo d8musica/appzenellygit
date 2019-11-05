@@ -58,7 +58,7 @@ export default class Header1 extends React.Component {
 
           
 
-            <a id="logo">
+            <a id="logo" href="/">
               <img alt="logo" src={Logo} width="100%"/>
             </a>
             

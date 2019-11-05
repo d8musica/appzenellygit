@@ -9,55 +9,22 @@ const handle = app.getRequestHandler()
 
 const url = 'mongodb+srv://admin:<admin>@cluster0-9doht.mongodb.net/test?retryWrites=true&w=majority'
 
-mongoose.connect(url, { useNewUrlParser: true })
-.then(() => {
-  console.log('chupelo')
-})
-.catch((err) => {
-  console.log('Error on start: ' + err.stack);
-  process.exit(1);
-});
-
-var Schema = mongoose.Schema;
-
-  var userSchema = new Schema({
-    email:  String,
-    password: String,
-    username:   String,    
-  });
-
-var User = mongoose.model('User', userSchema);
-
-mongoose.connect(url, { useNewUrlParser: true }, (err) => {
-  if (err) return reject(err)
-  console.log('Chupelo!')
-  })  
 
 app.prepare().then(() => {
   const server = express()
   server.use(bodyParser.json({ limit: '20mb' }))
   server.use(bodyParser.urlencoded({ limit: '20mb', extended: true }))
 
-  server.post('/a', (req, res) => {
-    console.log(req.body)
-
-    const newUser = new User(req.body)
-
-    newUser.save()
+  server.post('/logindata',(req,res) =>{
     
-    console.log(newUser)
-
+    if(req.body.username == "d8" && req.body.password == "d8"){
+      
+      res.send('ok')
+    }
   })
+  
 
-  server.get('/a', (req, res) => {
-    
-    User.find().then (
-      users => {
-        return res.json({ users })
-      }
-    )
-
-  })
+  
 
   server.get('*', (req, res) => {
     return handle(req, res)

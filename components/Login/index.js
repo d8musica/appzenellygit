@@ -1,11 +1,11 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { enquireScreen } from 'enquire-js';
-import Header from './Header';
+import Header from '../Main/Header1';
 import Login from './login'
 import Banner from './Banner';
 import Footer from './Footer';
-import './static/style';
+
 
 let isMobile = false;
 enquireScreen((b) => {
@@ -35,7 +35,7 @@ class Home extends React.PureComponent {
     return (
       [
         <Header key="header" isFirstScreen={this.state.isFirstScreen} isMobile={this.state.isMobile} />,
-        <Banner key="banner" onEnterChange={this.onEnterChange} />,
+        
         <Login key="login"/>,
         <Footer key="footer" />,
         <DocumentTitle title="Zenith Software" key="title" />,

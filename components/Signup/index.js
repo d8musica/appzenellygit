@@ -1,19 +1,19 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { enquireScreen } from 'enquire-js';
-import Header from './Header';
-import Banner from './Banner';
-import Page1 from './Page1';
-import Footer from './Footer';
-import '../../static/style/style';
+import Header from '../Main/Header1';
+import Signin from '../Signin'
+
+import Footer from '../Main/Footer';
+
+
 
 let isMobile = false;
 enquireScreen((b) => {
   isMobile = b;
 });
 
-
-class Home extends React.Component {
+class Home extends React.PureComponent {
   state = {
     isFirstScreen: true,
     isMobile,
@@ -33,21 +33,15 @@ class Home extends React.Component {
     });
   }
   render() {
-
-    
-
     return (
       [
         <Header key="header" isFirstScreen={this.state.isFirstScreen} isMobile={this.state.isMobile} />,
-        <Banner key="banner" onEnterChange={this.onEnterChange} initial_values = {this.props.props}/>,
-        <Page1 key="page1" isMobile={this.state.isMobile} />,        
+        
+        <Signin key="signup"/>,
         <Footer key="footer" />,
         <DocumentTitle title="Zenith Software" key="title" />,
       ]
     );
   }
 }
-
-
-
 export default Home;
